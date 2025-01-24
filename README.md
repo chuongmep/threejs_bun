@@ -1,5 +1,7 @@
 # test_threejs
 
+DEMO : https://chuongmep.github.io/threejs_bun/
+
 To install dependencies:
 
 ```bash
