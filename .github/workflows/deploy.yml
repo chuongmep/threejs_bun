@@ -33,11 +33,13 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-            name: dist
+            name: github-pages
             path: './dist'  # Ensure this path points to your build output directory
         
       - name: Deploy
         uses: actions/deploy-pages@v3
+        env:
+         name: github-pages
         with:
-            artifact: dist
+            artifact_name: github-pages
             token: ${{ secrets.GITHUB_TOKEN }}
