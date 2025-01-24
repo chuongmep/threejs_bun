@@ -33,9 +33,11 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+            name: dist
             path: './dist'  # Ensure this path points to your build output directory
         
       - name: Deploy
         uses: actions/deploy-pages@v3
         with:
+            artifact: dist
             token: ${{ secrets.GITHUB_TOKEN }}
