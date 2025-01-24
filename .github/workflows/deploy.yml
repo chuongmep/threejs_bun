@@ -24,20 +24,15 @@ jobs:
             bun-version: latest # You can also use a specific version
       - run: bun install # Only needed if you have any dependencies
 
-      - name: Build the project
-        run: bun run build # Build the project
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
+    
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: './dist'
+            path: './dist'  # Ensure this path points to your build output directory
+        
       - name: Deploy
         uses: actions/deploy-pages@v3
         with:
-          working-directory: dist
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: .
-          
+            token: ${{ secrets.GITHUB_TOKEN }}
