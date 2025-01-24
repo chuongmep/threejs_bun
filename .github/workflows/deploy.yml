@@ -22,11 +22,10 @@ jobs:
       - run: bun install # Only needed if you have any dependencies
 
       - name: Build the project
-        run: bun build  # Use Bun's build process (if needed)
+        run: bun run build # Build the project
 
       - name: Deploy to GitHub Pages
-        uses: chuongmep/gh-pages-action@v2
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages  # Deploy to the gh-pages branch
-          folder: public    # Folder to deploy (set to the folder containing your built website)
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
