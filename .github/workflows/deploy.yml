@@ -33,12 +33,10 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './dist'  # Path to the built site files
+          path: '.'
       - name: Deploy
         uses: actions/deploy-pages@v3
         with:
-          branch: gh-pages  # Deploy to the gh-pages branch
-          folder: dist    # Folder to deploy (set to the folder containing your built website)
-           # Token to use
           token: ${{ secrets.GITHUB_TOKEN }}
+          artifact: . # Use the artifact uploaded in the previous step
           
