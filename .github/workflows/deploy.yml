@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: '.'
+          path: './dist'
       - name: Deploy
         uses: actions/deploy-pages@v3
         with:
