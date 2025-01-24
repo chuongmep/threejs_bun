@@ -31,3 +31,8 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
+      - name: Deploy
+        uses: actions/deploy-pages@v3
+        with:
+          # Token to use
+          token: ${{ secrets.GITHUB_TOKEN }}
