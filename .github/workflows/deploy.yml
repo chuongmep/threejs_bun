@@ -24,6 +24,9 @@ jobs:
             bun-version: latest # You can also use a specific version
       - run: bun install # Only needed if you have any dependencies
 
+      - name: Build
+        run: bun run build # Build your project
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
     
