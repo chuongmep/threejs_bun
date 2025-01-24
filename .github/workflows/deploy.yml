@@ -37,6 +37,7 @@ jobs:
       - name: Deploy
         uses: actions/deploy-pages@v3
         with:
+          working-directory: dist
           token: ${{ secrets.GITHUB_TOKEN }}
-          path: dist
+          path: .
           
