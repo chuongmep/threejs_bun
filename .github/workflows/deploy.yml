@@ -35,7 +35,7 @@ jobs:
         uses: actions/deploy-pages@v3
         with:
           branch: gh-pages  # Deploy to the gh-pages branch
-          folder: public    # Folder to deploy (set to the folder containing your built website)
+          folder: dist    # Folder to deploy (set to the folder containing your built website)
            # Token to use
           token: ${{ secrets.GITHUB_TOKEN }}
           
