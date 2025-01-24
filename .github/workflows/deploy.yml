@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Trigger the action when there is a push to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Set up Bun
+        uses: supercharge/bun-action@v1
+        with:
+          bun-version: 'latest'
+
+      - name: Install dependencies with Bun
+        run: bun install  # Bun will install the necessary dependencies
+
+      - name: Build the project
+        run: bun build  # Use Bun's build process (if needed)
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # Deploy to the gh-pages branch
+          folder: public    # Folder to deploy (set to the folder containing your built website)
+          token: ${{ secrets.GITHUB_TOKEN }}
