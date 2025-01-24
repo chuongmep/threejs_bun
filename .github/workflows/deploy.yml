@@ -37,7 +37,7 @@ jobs:
             path: './dist'  # Ensure this path points to your build output directory
         
       - name: Deploy
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4
         env:
          name: github-pages
         with:
