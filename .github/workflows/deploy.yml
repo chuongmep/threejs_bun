@@ -38,5 +38,5 @@ jobs:
         uses: actions/deploy-pages@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifact: . # Use the artifact uploaded in the previous step
+          path: dist
           
